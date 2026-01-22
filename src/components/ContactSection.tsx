@@ -2,6 +2,8 @@ import { useState, useRef } from "react";
 import { motion, useInView, useScroll, useTransform, useSpring } from "framer-motion";
 import { Send, Mail, MapPin, Phone } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
 
 export function ContactSection() {
   const [formData, setFormData] = useState({
@@ -30,17 +32,40 @@ export function ContactSection() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      // Send email using EmailJS
+      await emailjs.send(
+        "service_xhwgg3c",   // e.g., "service_xxx"
+        "template_chj620f",  // e.g., "contact_form"
+        {
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          time: new Date().toLocaleString(),
+          reply_to: formData.email, // For reply email
+        },
+        "BXEdkzjOTSXTEmg0J"    // from EmailJS dashboard
+      );
 
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon.",
-    });
+      toast({
+        title: "Message sent!",
+        description: "Thanks for reaching out. I'll get back to you soon.",
+      });
 
-    setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      toast({
+        title: "Error!",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    }
+
     setIsSubmitting(false);
   };
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -54,13 +79,13 @@ export function ContactSection() {
   return (
     <section ref={sectionRef} id="contact" className="py-16 sm:py-32 bg-secondary/30 relative overflow-hidden">
       {/* Background Elements with Parallax */}
-      <motion.div 
+      <motion.div
         style={{ scale: smoothBgScale1 }}
-        className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" 
+        className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
       />
-      <motion.div 
+      <motion.div
         style={{ scale: smoothBgScale2 }}
-        className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" 
+        className="absolute bottom-0 left-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl"
       />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -112,7 +137,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Email</p>
-                  <p className="font-medium">haseeb@example.com</p>
+                  <p className="font-medium">haseebanwer1990@gmail.com</p>
                 </div>
               </motion.div>
 
@@ -125,7 +150,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-sm text-muted-foreground">Phone</p>
-                  <p className="font-medium">+1 (555) 123-4567</p>
+                  <p className="font-medium">+92 (319) 240-9769</p>
                 </div>
               </motion.div>
 

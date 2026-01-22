@@ -1,71 +1,83 @@
 import { useState, useRef } from "react";
 import { motion, useInView, useScroll, useTransform, useSpring } from "framer-motion";
 import { ExternalLink, Github, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import img1 from "../Images/1.png";
+import img2 from "../Images/2.png";
+import img3 from "../Images/3.png";
+import img4 from "../Images/4.png";
+import img5 from "../Images/5.png";
+import img6 from "../Images/6.png";
 
-const categories = ["All", "Mobile Apps", "Web Apps", "WordPress"];
 
 const projects = [
   {
     id: 1,
-    title: "FinTrack Pro",
+    title: "Horizon Travels",
     description:
-      "A comprehensive finance tracking mobile app with real-time analytics and budget management.",
-    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop",
-    category: "Mobile Apps",
-    tech: ["Flutter", "Firebase", "Charts"],
+      "A modern travel agency website showcasing tour packages, destinations, and inquiry booking with a clean, trust-focused design.",
+    image: img1,
+    category: "Website",
+    tech: ["Wordpress", "Elementor"],
     color: "from-primary to-accent",
+    liveUrl: "https://horizontravels.co.uk",
   },
   {
     id: 2,
-    title: "CloudCommerce",
+    title: "Ikhlas-Traveks",
     description:
-      "Full-stack e-commerce platform with inventory management and payment integration.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&auto=format&fit=crop",
-    category: "Web Apps",
-    tech: ["React", "MongoDB", "Stripe"],
+      "A professional travel and tourism website highlighting visa services, travel packages, and customer contact funnels.",
+    image: img2,
+    category: "Website",
+    tech: ["Wordpress", "Elementor"],
     color: "from-accent to-primary",
+    liveUrl: "https://ikhlastravel.co.uk/"
   },
   {
     id: 3,
-    title: "HealthHub",
+    title: "Fresh Movers",
     description:
-      "Healthcare appointment booking system with telemedicine features and patient portal.",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop",
-    category: "WordPress",
-    tech: ["WordPress", "PHP", "MySQL"],
+      "A service-based business website for a moving company, featuring service details, booking requests, and location coverage.",
+    image: img3,
+    category: "Website",
+    tech: ["WordPress", "Gutenberg"],
     color: "from-primary to-accent",
+    liveUrl: "https://freshmovers.ae/"
   },
   {
     id: 4,
-    title: "TaskFlow",
+    title: "ASF Sanitary Fittings",
     description:
-      "Project management app with Kanban boards, team collaboration, and progress tracking.",
-    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=800&auto=format&fit=crop",
-    category: "Mobile Apps",
-    tech: ["Flutter", "Firebase", "Push Notifications"],
+      "A custom-built web application for managing sanitary product listings, inquiries, and backend product data.",
+    image: img4,
+    category: "Web-App",
+    tech: ["Custom Code", "PHP", "MySQL"],
     color: "from-accent to-primary",
+    liveUrl: "https://asfsanitaryfitting.com/"
   },
   {
     id: 5,
-    title: "RestaurantOS",
+    title: "Vision Sanitary Fittings",
     description:
-      "Complete restaurant management system with ordering, POS, and analytics dashboard.",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&auto=format&fit=crop",
-    category: "Web Apps",
-    tech: ["React", "PHP", "MySQL"],
+      "A business web application designed to showcase sanitary products with dynamic management and admin control features.",
+    image: img5,
+    category: "Web-App",
+    tech: ["Custom Code", "PHP", "MySQL"],
     color: "from-primary to-accent",
+    liveUrl: "https://visionsanitaryfitting.com/"
   },
   {
     id: 6,
-    title: "TravelBuddy",
+    title: "Mobi-Sim",
     description:
-      "Travel planning and booking platform with itinerary management and local recommendations.",
-    image: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&auto=format&fit=crop",
-    category: "WordPress",
-    tech: ["WordPress", "JavaScript", "APIs"],
+      "A Chrome extension for web developers that provides live mobile viewport previews to test and validate responsive designs in real time.",
+    image: img6,
+    category: "Chrome Extension",
+    tech: ["HTML", "JavaScript", "APIs"],
     color: "from-accent to-primary",
+    liveUrl: "https://chromewebstore.google.com/detail/mobi-sim/mnnaibpmgkhhopgpmaedmdnilhldhlhc"
   },
+
+
 ];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
@@ -90,24 +102,21 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           />
           {/* Overlay */}
           <div className={`absolute inset-0 bg-gradient-to-t ${project.color} opacity-0 group-hover:opacity-70 transition-opacity duration-500`} />
-          
+
           {/* Hover Actions */}
           <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-            <motion.button
+            <motion.a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               className="w-12 h-12 rounded-full bg-background/90 flex items-center justify-center text-foreground hover:bg-background transition-colors"
             >
               <ExternalLink className="w-5 h-5" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-12 h-12 rounded-full bg-background/90 flex items-center justify-center text-foreground hover:bg-background transition-colors"
-            >
-              <Github className="w-5 h-5" />
-            </motion.button>
+            </motion.a>
           </div>
+
 
           {/* Category Badge */}
           <div className="absolute top-4 left-4">
@@ -167,13 +176,13 @@ export function ProjectsSection() {
   return (
     <section ref={sectionRef} id="projects" className="py-16 sm:py-32 bg-secondary/30 relative overflow-hidden">
       {/* Background Elements with Parallax */}
-      <motion.div 
+      <motion.div
         style={{ x: smoothBgX1 }}
-        className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2" 
+        className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl -translate-x-1/2"
       />
-      <motion.div 
+      <motion.div
         style={{ x: smoothBgX2 }}
-        className="absolute top-1/4 right-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl translate-x-1/2" 
+        className="absolute top-1/4 right-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl translate-x-1/2"
       />
 
       <div className="container mx-auto px-6 relative z-10">
@@ -197,28 +206,6 @@ export function ProjectsSection() {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-3 mb-12"
-        >
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-5 py-2.5 rounded-full font-medium text-sm transition-all duration-300 ${
-                activeCategory === category
-                  ? "bg-primary text-primary-foreground shadow-lg"
-                  : "bg-secondary text-secondary-foreground hover:bg-secondary/80"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </motion.div>
-
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
@@ -226,24 +213,6 @@ export function ProjectsSection() {
           ))}
         </div>
 
-        {/* View All Projects Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <Link to="/projects">
-            <motion.button
-              whileHover={{ scale: 1.05, x: 5 }}
-              whileTap={{ scale: 0.98 }}
-              className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-primary border-2 border-primary rounded-xl hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-            >
-              View All Projects
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-          </Link>
-        </motion.div>
       </div>
     </section>
   );
