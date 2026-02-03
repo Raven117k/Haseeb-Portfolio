@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap Link (Crucial for indexing)
+Sitemap: https://haseeb-labs.vercel.app/sitemap.xml
+
+# SEO Host
+Host: https://haseeb-labs.vercel.app/
