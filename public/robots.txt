@@ -1,14 +1,20 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
+# Haseeb Labs Intensive SEO Robots File
+# Optimized for: SaaS, Startups, and High-Value Clients
 
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /favicon.svg
+
+# Disallow crawling of internal configuration files if they exist
+Disallow: /node_modules/
+Disallow: /config/
+
+# Host Link
+Host: https://haseeb-labs.vercel.app/
+
+# The most important line for Wide SEO:
+Sitemap: https://haseeb-labs.vercel.app/sitemap.xml
+
+# Tell bots to crawl with a slight delay to ensure JS renders
+Crawl-delay: 1

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Main Home Page -->
+  <url>
+    <loc>https://haseeb-labs.vercel.app/</loc>
+    <lastmod>2026-02-2</lastmod> <!-- Updated to current year -->
+    <changefreq>daily</changefreq> <!-- Changed to daily to tell Google to check back often -->
+    <priority>1.0</priority>
+    
+    <!-- Image SEO: Tells Google to index your cono.png for image results -->
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/Raven117k/Haseeb-Portfolio/refs/heads/main/cono.png</image:loc>
+      <image:title>Haseeb Labs - Software Dev & Strategic Thinker Visualization</image:title>
+      <image:caption>Abstract 3D digital experience by Haseeb, Best Programmer for High Value Clients</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

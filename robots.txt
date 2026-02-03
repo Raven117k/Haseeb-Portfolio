@@ -1,8 +1,20 @@
+# Haseeb Labs Intensive SEO Robots File
+# Optimized for: SaaS, Startups, and High-Value Clients
+
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /favicon.svg
 
-# Sitemap Link (Crucial for indexing)
+# Disallow crawling of internal configuration files if they exist
+Disallow: /node_modules/
+Disallow: /config/
+
+# Host Link
+Host: https://haseeb-labs.vercel.app/
+
+# The most important line for Wide SEO:
 Sitemap: https://haseeb-labs.vercel.app/sitemap.xml
 
-# SEO Host
-Host: https://haseeb-labs.vercel.app/
+# Tell bots to crawl with a slight delay to ensure JS renders
+Crawl-delay: 1
