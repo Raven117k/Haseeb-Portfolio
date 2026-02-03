@@ -5,14 +5,15 @@
   <!-- Main Home Page -->
   <url>
     <loc>https://haseeb-labs.vercel.app/</loc>
-    <lastmod>2026-02-2</lastmod> <!-- Updated to current year -->
-    <changefreq>daily</changefreq> <!-- Changed to daily to tell Google to check back often -->
+    <lastmod>2026-02-03</lastmod> 
+    <changefreq>daily</changefreq> 
     <priority>1.0</priority>
     
-    <!-- Image SEO: Tells Google to index your cono.png for image results -->
+    <!-- Image SEO -->
     <image:image>
       <image:loc>https://raw.githubusercontent.com/Raven117k/Haseeb-Portfolio/refs/heads/main/cono.png</image:loc>
-      <image:title>Haseeb Labs - Software Dev & Strategic Thinker Visualization</image:title>
+      <!-- FIXED: Changed & to &amp; below -->
+      <image:title>Haseeb Labs - Software Dev &amp; Strategic Thinker Visualization</image:title>
       <image:caption>Abstract 3D digital experience by Haseeb, Best Programmer for High Value Clients</image:caption>
     </image:image>
   </url>
