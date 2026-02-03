@@ -16,5 +16,5 @@ Host: https://haseeb-labs.vercel.app/
 # The most important line for Wide SEO:
 Sitemap: https://haseeb-labs.vercel.app/sitemap.xml
 
-# Tell bots to crawl with a slight delay to ensure JS renders
+# Tell bots to crawl with a slight delay to ensure JS renders new
 Crawl-delay: 1
