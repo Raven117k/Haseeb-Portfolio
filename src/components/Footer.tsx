@@ -2,17 +2,16 @@ import { motion } from "framer-motion";
 import { Github, Twitter, Linkedin, Instagram, Heart } from "lucide-react";
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
+  { name: "GitHub", icon: Github, href: "https://github.com/Raven117k/" },
+  // { name: "Twitter", icon: Twitter, href: "#" },
+  // { name: "LinkedIn", icon: Linkedin, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/raven.codes/" },
 ];
 
 const quickLinks = [
   { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
-  { name: "Team", href: "#team" },
   { name: "Contact", href: "#contact" },
 ];
 
