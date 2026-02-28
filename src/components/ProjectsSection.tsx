@@ -7,6 +7,8 @@ import img3 from "../Images/3.png";
 import img4 from "../Images/4.png";
 import img5 from "../Images/5.png";
 import img6 from "../Images/6.png";
+import img7 from "../Images/7.png";
+import img8 from "../Images/8.png";
 
 
 const projects = [
@@ -75,6 +77,28 @@ const projects = [
     tech: ["HTML", "JavaScript", "APIs"],
     color: "from-accent to-primary",
     liveUrl: "https://chromewebstore.google.com/detail/mobi-sim/mnnaibpmgkhhopgpmaedmdnilhldhlhc"
+  },
+  {
+    id: 7,
+    title: "Cineza",
+    description:
+      "Cineza is a full-stack MERN web application built for browsing and downloading movies through a fast, intuitive interface, It delivers a smooth discovery experience with responsive design, clean UI patterns, and efficient data handling for large movie catalogs.",
+    image: img7,
+    category: "Web-App",
+    tech: ["MERN", "React", "Express" , "NodeJS"],
+    color: "from-accent to-primary",
+    liveUrl: "https://cineza-raven117k.vercel.app/"
+  },
+  {
+    id: 8,
+    title: "Unbound",
+    description:
+      "Unbound is a social media platform built to support open expression and unrestricted conversation within a modern, scalable web architecture. The platform focuses on user-driven content sharing, real-time interactions, and a clean, distraction-free interface designed to encourage authentic communication.",
+    image: img8,
+    category: "Web-App",
+    tech: ["MERN", "React", "Express" , "NodeJS"],
+    color: "from-accent to-primary",
+    liveUrl: "https://unbound-raven117k.vercel.app/home"
   },
 
 
