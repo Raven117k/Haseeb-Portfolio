@@ -9,6 +9,7 @@ import img5 from "../Images/5.png";
 import img6 from "../Images/6.png";
 import img7 from "../Images/7.png";
 import img8 from "../Images/8.png";
+import img9 from "../Images/9.png";
 
 
 const projects = [
@@ -69,14 +70,14 @@ const projects = [
   },
   {
     id: 6,
-    title: "Mobi-Sim",
+    title: "Diana Ai ChatBot",
     description:
-      "A Chrome extension for web developers that provides live mobile viewport previews to test and validate responsive designs in real time.",
+      "A Modern, Animated, and fully Functional Chat App built with Flutter and Firebase, designed for web, desktop, and mobile. Perfect for Authentication, Animations, and State Management.",
     image: img6,
-    category: "Chrome Extension",
-    tech: ["HTML", "JavaScript", "APIs"],
+    category: "Mobile-App",
+    tech: ["Flutter", "Firebase", "Gemini-APIs"],
     color: "from-accent to-primary",
-    liveUrl: "https://chromewebstore.google.com/detail/mobi-sim/mnnaibpmgkhhopgpmaedmdnilhldhlhc"
+    liveUrl: "https://diana-raven117k.vercel.app/"
   },
   {
     id: 7,
@@ -100,8 +101,17 @@ const projects = [
     color: "from-accent to-primary",
     liveUrl: "https://unbound-raven117k.vercel.app/home"
   },
-
-
+    {
+    id: 9,
+    title: "Mobi-Sim",
+    description:
+      "A Chrome extension for web developers that provides live mobile viewport previews to test and validate responsive designs in real time.",
+    image: img9,
+    category: "Chrome Extension",
+    tech: ["HTML", "JavaScript", "APIs"],
+    color: "from-accent to-primary",
+    liveUrl: "https://chromewebstore.google.com/detail/mobi-sim/mnnaibpmgkhhopgpmaedmdnilhldhlhc"
+  },
 ];
 
 function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
